@@ -1,10 +1,39 @@
 /* start global variables */
 
 :root {
+    --heading-color: #ebeced;
     --main-color: #10cab7;
+    --bg-color: #f6f6f6;
+    --main-padding:60px;
+    --font-color: #333;
 }
 
 /* end globale variables */
+/* start compenents */
+.special-heading {
+    color: var(--heading-color);
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    margin: 0;
+    text-transform: capitalize;
+}
+.special-p {
+    text-align: center;
+    margin-top: -30px;
+    font-size: 16px;
+    color: #979797;
+}
+@media (max-width:767px) {
+    .special-heading {
+        font-size: 80px;
+    }
+    .special-p {
+        font-size: 15px;
+        margin-top: -20;
+    }
+}
+/* end compenents */
 /* ===================== */
 /* start global rules */
 * {
@@ -118,20 +147,20 @@ header .links ul {
 }
 
 header .links ul li a {
-    color: #333;
+    color: var(--font-color);
     text-decoration: none;
     display: block;
     padding: 15px;
 }
 header .links ul li:not(:last-child) {
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--font-color);
 }
 
 header .links ul::before {
     content: "";
     border-style: solid;
     border-width: 10px;
-    border-color:transparent transparent #f6f6ff transparent;
+    border-color:transparent transparent #f6f6f6 transparent;
     position: absolute;
     right: 5px;
     top: -20px;
@@ -174,12 +203,12 @@ header .links ul::before {
 /* start features */
 
 .features {
-    background-color: #f6f6f6;
+    background-color: var(--bg-color);
 }
 .features .container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
 }
 .features .container .card {
     text-align: center;
@@ -204,7 +233,7 @@ header .links ul::before {
     -o-transform: scale(1.3, 1.1);
 }
 .features .container .card i {
-    padding: 60px 0 0 0;
+    padding: var(--main-padding) 0 0 0;
     transition: 0.8s;
     font-size: 45px;
     color: var(--main-color);
@@ -225,8 +254,181 @@ header .links ul::before {
 }
 
 .features .container .card p {
-    color: #777;
+    color: var(--font-color);
     font-size: 16px;
     line-height: 1.8;
 }
 /* start features */
+/* start services */
+.services {
+    padding: var(--main-padding) 0 0 0;
+}
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    padding: var(--main-padding) 0 0 0;
+    gap: 60px;
+}
+.service-container .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: var(--main-padding);
+}
+.service-container .card i {
+    font-size: 30px;
+    color: var(--main-color);
+}
+.service-container img {
+    width: 300px;
+
+}
+.service-container .col {
+    position: relative;
+}
+.service-container .col .image::after{
+    content: "";
+    width: 100px;
+    height: 420px;
+    background-color: #2C4755;
+    position: absolute;
+    top: calc(0% - 55px);
+    right: 0px;
+    z-index: -1;
+}
+@media (max-width:1199px) {
+    .service-container .col .image {
+        display: none;
+    }
+}
+.service-container .card h3 {
+    color: #2C4755;
+    font-size: 15px;
+    font-weight: 800;
+}
+.service-container .card p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #2C4755;
+}
+/* end services */
+/* start portfolio */
+.portfolio {
+    background-color: var(--bg-color);
+    padding: var(--main-padding) 0;
+}
+.portfolio-content {
+    margin-top: var(--main-padding);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+}
+.portfolio .portfolio-content .card {
+    background-color: white;
+}
+
+.portfolio .portfolio-content .card .image {
+    overflow: hidden;
+}
+
+.portfolio .portfolio-content .card img {
+    max-width: 100%;
+    transition: 0.6s;
+    -webkit-transition: 0.6s;
+    -moz-transition: 0.6s;
+    -ms-transition: 0.6s;
+    -o-transition: 0.6s;
+}
+.portfolio .portfolio-content .card:hover img {
+    transform: scale(1.2,1.3);
+    -webkit-transform: scale(1.2,1.3);
+    -moz-transform: scale(1.2,1.3);
+    -ms-transform: scale(1.2,1.3);
+    -o-transform: scale(1.2,1.3);
+}
+.portfolio .portfolio-content .card .info {
+    padding: 15px;
+}
+
+.portfolio .portfolio-content .card .info  h3 {
+    margin: 0;
+    font-weight: 700;
+}
+.portfolio .portfolio-content .card .info p {
+    color: var(--font-color);
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* end portfolio */
+/* start about */
+.about {
+    padding: var(--main-padding) 0;
+}
+.about .about-content {
+    margin-top: calc(var(--main-padding) + 40px) ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+@media (max-width:991px) {
+    .about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about .about-content .image::before  , .about .about-content .image::after {
+        display: none;
+    }
+    .about .about-content .image {
+        margin: 0 auto 60px;
+    }
+}
+.about .about-content .image {
+    width: 280px;
+    height: 310px;
+    position: relative;
+}
+.about .about-content .image img {
+    max-width: 100%;
+}
+.about .about-content .image::before {
+    content: '';
+    width: 80px;
+    height: calc(100% + 60px);
+    position: absolute;
+    background-color: var(--heading-color);
+    left: -20px;
+    z-index: -1;
+    top: -30px;
+}
+.about .about-content .image::after {
+    content: '';
+    height: 70%;
+    width: 120px;
+    border-left:solid 80px var(--main-color) ;
+    border-bottom:solid 80px var(--main-color) ;
+    right: -150px;
+    position: absolute;
+    z-index: -1;
+    top: -10%;
+}
+.about .about-content .text {
+    flex-basis: calc(100% - 500px);
+}
+.about .about-content .text p:first-of-type {
+    font-weight: bold;
+    line-height: 2;
+    margin-bottom: 30px;
+}
+.about .about-content .text hr {
+    border-color: var(--main-color);
+    width: 50%;
+    display: inline-block;
+}
+.about .about-content .text p:last-of-type {
+    font-weight: 300px;
+    line-height: 1.8;
+    color: #777;
+}
+/* end about */
