@@ -1,0 +1,50 @@
+/* start variables */
+:root {
+
+}
+/* end variables */
+/* start components */
+/* end components */
+/* start global rules */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+ul {
+    list-style-type: none;
+}
+/* end global rules */
+/* start style Container  */
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+}
+/* start continer mediaqueres */
+@media (min-width: 768px) {
+    .container {
+        width : 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width : 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width : 1170px;
+   
+ }
+}
+
+/* end continer mediaqueres */
+/* end style coantainer */
