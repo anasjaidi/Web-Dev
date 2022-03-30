@@ -1,6 +1,6 @@
 /* start variables */
 :root {
-
+    --main-color:#19c8fa;
 }
 /* end variables */
 /* start components */
@@ -16,6 +16,7 @@ html {
 }
 body {
     font-family: 'Open Sans', sans-serif;
+    background-color: black;
 }
 ul {
     list-style-type: none;
@@ -48,3 +49,44 @@ ul {
 
 /* end continer mediaqueres */
 /* end style coantainer */
+/* start heading */
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+header .container::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - 30px);
+    left: 15px;
+    height: 1px;
+    background-color: #a2a2a2;
+    bottom: 0;
+
+}
+header .container nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+header .container nav ul {
+    display: flex;
+    z-index: 2;
+}
+header .container nav ul li a {
+    display: block;
+    padding: 40px 15px ;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+header .container nav ul li a:hover ,
+header .container nav ul li a.activ {
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+/* end heading */
